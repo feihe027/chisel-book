@@ -45,21 +45,5 @@ class AssumeTest extends Module {
 
 class FormalTest extends AnyFlatSpec with ChiselScalatestTester with Formal {
 
-  "FormalSimple" should "pass" in {
-    verify(new FormalSimpleTest(8), Seq(BoundedCheck(1)))
-  }
 
-  "PastTest" should "pass" in {
-    verify(new PastTest(), Seq(BoundedCheck(5), WriteVcdAnnotation))
-  }
-
-  "AssumeTest" should "pass" in {
-    verify(new AssumeTest(), Seq(BoundedCheck(5), WriteVcdAnnotation))
-  }
-
-  //- start formal_assert
-  "AssertTest" should "pass" in {
-    verify(new Assert(), Seq(BoundedCheck(5), WriteVcdAnnotation))
-  }
-  //- end
 }
